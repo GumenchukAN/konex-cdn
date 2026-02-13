@@ -18,6 +18,7 @@ Built with:
     - Express
     - dotenv
     - pg (PostgreSQL client)
+    - Cors
 
   * Authentication
     - JSON Web Token (JWT)
