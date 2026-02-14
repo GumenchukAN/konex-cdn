@@ -23,6 +23,7 @@
 import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
+import { API_URL } from '../config/api';
 
 const router = useRouter();
 const allUrls = ref([]);
@@ -38,7 +39,7 @@ const paginatedUrls = computed(() => {
 
 onMounted(async () => {
   try {
-    const res = await axios.get('http://localhost:3000/api/photos');
+    const res = await axios.get(`${API_URL}api/photos`);
     allUrls.value = res.data;
   } catch (err) {
     console.error('Помилка отримання фото:', err);

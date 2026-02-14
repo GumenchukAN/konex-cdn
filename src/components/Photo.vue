@@ -18,6 +18,7 @@ import axios from 'axios';
 import { ref, onMounted } from 'vue'
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { API_URL, CDN_URL } from '../config/api';
 
 const route = useRoute();
 const router = useRouter();
@@ -25,7 +26,7 @@ const isLoggedIn = ref(false)
 
 async function RemovePhoto() {
   try {
-    await axios.post('http://localhost:3000/api/delete', {
+    await axios.post(`${API_URL}api/delete`, {
       filename: photoName
     });
 
@@ -37,7 +38,7 @@ async function RemovePhoto() {
 
 const checkAuth = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/me', {
+    const res = await fetch(`${API_URL}api/me`, {
       credentials: 'include'
     })
     isLoggedIn.value = res.status === 200
@@ -54,10 +55,10 @@ function goBack() {
 
 const downloadPhoto = (filePath) => {
   window.open(
-    `http://localhost:3000/api/download?path=${filePath}`,
+    `${API_URL}api/download?path=${filePath}`,
     '_blank'
   )
 }
 const photoName = route.params.name;
-const photoUrl = computed(() => `https://cdn.konex.com.ua/file/test_87/project/${photoName}`);
+const photoUrl = computed(() => `${CDN_URL}file/test_87/project/${photoName}`);
 </script>

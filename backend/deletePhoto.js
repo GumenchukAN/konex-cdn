@@ -1,6 +1,7 @@
 import axios from 'axios';
 import express from 'express';
 import { getToken } from './getToken.js';
+import { cdn_URL } from './main.js';
 
 
 export const deleteRouter = express.Router();
@@ -11,7 +12,7 @@ deleteRouter.post('/delete', async (req, res) => {
     const token = await getToken();
 
     await axios.post(
-      'https://cdn.konex.com.ua/delete/',
+      `${cdn_URL}delete/`,
       null,
       {
         params: { token, path: 'project', filename }

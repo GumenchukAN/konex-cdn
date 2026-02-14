@@ -13,6 +13,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { API_URL } from '../config/api';
 
 const isLoggedIn = ref(false)
 const router = useRouter();
@@ -27,7 +28,7 @@ function goToLogin() {
 
 const checkAuth = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/me', {
+    const res = await fetch(`${API_URL}api/me`, {
       credentials: 'include'
     })
     isLoggedIn.value = res.status === 200

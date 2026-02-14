@@ -6,6 +6,7 @@ import Collector from '../components/Collector.vue'
 import Home from '../components/Home.vue'
 import AllPhoto from '../components/AllPhoto.vue'
 import Photo from '../components/Photo.vue'
+import { API_URL } from '../config/api'
 
 const routes = [
   {
@@ -43,7 +44,7 @@ router.beforeEach(async (to, from, next) => {
   }
 
   try {
-    await axios.get('http://localhost:3000/api/me', {
+    await axios.get(`${API_URL}api/me`, {
       withCredentials: true
     })
 

@@ -4,6 +4,7 @@ import axios from 'axios';
 import FormData from 'form-data';
 import sharp from 'sharp';
 import { getToken } from './getToken.js';
+import { cdn_URL } from './main.js';
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -63,7 +64,7 @@ addPhoto.post('/add-photo', upload.array('files'), async (req, res) => {
       });
 
       const response = await axios.post(
-        'https://cdn.konex.com.ua/upload/',
+        `${cdn_URL}upload/`,
         form,
         {
           headers: form.getHeaders(),

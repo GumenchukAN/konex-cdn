@@ -29,6 +29,7 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
 const files = ref([]);
 const uploadResult = ref(null);
@@ -64,7 +65,7 @@ async function uploadFiles() {
 
   try {
     const res = await axios.post(
-      'http://localhost:3000/api/add-photo',
+      `${API_URL}api/add-photo`,
       formData,
       { headers: { 'Content-Type': 'multipart/form-data' }, withCredentials: true }
     );

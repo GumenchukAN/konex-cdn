@@ -2,6 +2,7 @@ import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
 import { getToken } from './getToken.js';
+import { cdn_URL } from './main.js';
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ router.get('/photos', async (req, res) => {
     const token = await getToken(); 
     if (!token) return res.status(401).json({ error: 'No token' });
 
-    const response = await axios.get('https://cdn.konex.com.ua/list/', {
+    const response = await axios.get(`${cdn_URL}list/`, {
       params: { token }
     });
 

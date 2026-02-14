@@ -6,7 +6,7 @@ dotenv.config();
 export async function getToken() {
   try {
     const loginResponse = await axios.post(
-      'https://auth.konex.com.ua/login/',
+      `${process.env.CDN_AUTH_URL}login/`,
       {
         login: process.env.CDN_LOGIN,
         password: process.env.CDN_PASSWORD,

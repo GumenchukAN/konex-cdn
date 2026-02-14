@@ -33,4 +33,4 @@ Key Features:
   - Download photos
   - Secure token-based communication with CDN API
 
-Getting Started:
+<!-- Getting Started: -->
