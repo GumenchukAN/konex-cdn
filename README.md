@@ -33,4 +33,14 @@ Key Features:
   - Download photos
   - Secure token-based communication with CDN API
 
-<!-- Getting Started: -->
+Getting Started:
+*Command line:
+  git clone https://github.com/GumenchukAN/konex-cdn.git
+  cd konex-cdn
+  cd backend
+  npm install
+  cd frontend
+  npm install
+*Create .env file in a root
+*Setup database(PostgreSQL)
+
