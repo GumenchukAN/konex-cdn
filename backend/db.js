@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const { Pool } = pkg;
-const AWS = require('aws-sdk');
+import AWS from 'aws-sdk';
+
 AWS.config.update({ region: 'eu-west-1' });
 
 export const pool = new Pool({
