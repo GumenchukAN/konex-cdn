@@ -1,14 +1,1 @@
-    - Bootstrap <npm install bootstrap>
-    - Vue3
-    - Vue Router <npm install vue-router@4>
-    - Axios <npm install axios>
-
-    - Node.js 
-    - Express <npm install express>
-    - dotenv <npm install dotenv>
-    - pg (PostgreSQL client) <npm install pg>
-    - Cors <npm install cors>
-
-    - JSON Web Token (JWT) <npm install jsonwebtoken>
-    - Password hashing <npm install bcrypt>
-    - Protected API routes
+npm install bootstrap vue-router@4 axios express dotenv pg cors jsonwebtoken bcrypt 
